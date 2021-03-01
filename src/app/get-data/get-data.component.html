@@ -1,0 +1,136 @@
+<div class="row sw-content">
+  <div class="col-sm-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataPeople()">
+            People
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataPlanets()">
+            Planets
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataFilms()">Films</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataStarships()">
+            Starships
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataVehicles()">
+            Vehicles
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body hover-hand" (click)="getDataSpecies()">
+            Species
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <mat-card
+      *ngFor="let extractedCharacter of extractedCharacters"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedCharacter.name
+        }}</mat-card-title>
+        <p>Height: {{ extractedCharacter.height }} cm</p>
+        <p>Hair Colour: {{ extractedCharacter.hair_color }}</p>
+        <p>Eye Colour: {{ extractedCharacter.eye_color }}</p>
+        <p>Skin Colour: {{ extractedCharacter.skin_color }}</p>
+        <p>Birthday: {{ extractedCharacter.birth_year }}</p>
+        <p>Gender: {{ extractedCharacter.gender }}</p>
+        <!-- <p class="film-tag">Appeared in:</p>
+        <p>{{ extractedCharacter.orange.title }}</p> -->
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      *ngFor="let extractedPlanet of extractedPlanets"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedPlanet.name
+        }}</mat-card-title>
+        <p>Climate: {{ extractedPlanet.climate }}</p>
+        <p>Diameter: {{ extractedPlanet.diameter }}</p>
+        <p>Population: {{ extractedPlanet.population }}</p>
+        <p>Gravity: {{ extractedPlanet.gravity }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      *ngFor="let extractedFilm of extractedFilms"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedFilm.title
+        }}</mat-card-title>
+        <p>Title: {{ extractedFilm.title }} cm</p>
+        <p>Director: {{ extractedFilm.director }}</p>
+        <p>Release Date: {{ extractedFilm.release_date }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      *ngFor="let extractedStarship of extractedStarships"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedStarship.name
+        }}</mat-card-title>
+        <p>Cargo Capacity: {{ extractedStarship.cargo_capacity }}</p>
+        <p>Cost in credits: {{ extractedStarship.cost_in_credits }}</p>
+        <p>Crew: {{ extractedStarship.crew }}</p>
+        <p>Hyperdrive rating: {{ extractedStarship.hyperdriver_rating }}</p>
+        <p>Passengers: {{ extractedStarship.passengers }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      *ngFor="let extractedVehicle of extractedVehicles"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedVehicle.name
+        }}</mat-card-title>
+        <p>Cargo Capacity: {{ extractedVehicle.cargo_capacity }}</p>
+        <p>Cost in credits: {{ extractedVehicle.cost_in_credits }}</p>
+        <p>Passengers: {{ extractedVehicle.passengers }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card
+      *ngFor="let extractedSpecie of extractedSpecies"
+      class="character-card"
+    >
+      <mat-card-content>
+        <mat-card-title class="character-name">{{
+          extractedSpecie.name
+        }}</mat-card-title>
+        <p>Classification: {{ extractedSpecie.classification }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
